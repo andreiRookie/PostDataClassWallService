@@ -65,7 +65,7 @@ class WallServiceTest {
 
         val expectedResult = "updated text"
 
-        val actualResult = WallService.getPost(1234)?.text
+        val actualResult = WallService.getPost(12344)?.text
 
         assertEquals(expectedResult, actualResult)
 
@@ -88,7 +88,7 @@ class WallServiceTest {
 
         //act
 
-        val actualResult = WallService.update(testPost)
+        val actualResult = !WallService.update(testPost)
 
         //assert
 
