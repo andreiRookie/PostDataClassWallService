@@ -11,25 +11,39 @@ class WallServiceTest {
     fun add_test() {
 
         //arrange
-
+        val service = WallService()
         val testPost = Post(
             id = 0,
             date = 1000,
             text = "testPost"
         )
 
+        val testPost2 = Post(
+            id = 1,
+            date = 1000,
+            text = "testPost"
+        )
+
+        val testPost3 = Post(
+            id = 0,
+            date = 1000,
+            text = "testPost"
+        )
+
         //act
-        val actualResult = WallService.add(testPost).id != 0
+        val actualResult = service.add(testPost3).id != 0
 
         //assert
-        assertTrue(false)
+        assertTrue(actualResult)
 
     }
 
     @Test
     fun update_existingIdTest() {
         //arrange
-        WallService.add(Post(
+
+        val service = WallService()
+        service.add(Post(
             id = 1,
             date = 121212,
             text = "post"
@@ -42,30 +56,46 @@ class WallServiceTest {
         )
 
         //act
-        val actualResult = WallService.update(testPost)
+        val actualResult = service.update(testPost)
 
         //assert
-        assertTrue(false)
+        assertTrue(actualResult)
     }
 
     @Test
     fun update_existingId_propertiesChangingTest() {
-        WallService.add(Post(
+
+        val service = WallService()
+
+        service.add(Post(
             id = 1234,
             date = 4321,
             text = "text to be updated"
         ))
+
+        service.add(Post(
+            id = 1233,
+            date = 4321,
+            text = "text to be updated"
+        ))
+
         val testPost = Post(
-            id = 1234,
+            id = 12344,
             date = 1234,
             text = "updated text"
         )
 
-        WallService.update(testPost)
+        service.add(Post(
+            id = 12344,
+            date = 4321,
+            text = "text to be updated"
+        ))
+
+        service.update(testPost)
 
         val expectedResult = "updated text"
 
-        val actualResult = WallService.getPost(12344)?.text
+        val actualResult = service.getPost(12344)?.text
 
         assertEquals(expectedResult, actualResult)
 
@@ -74,8 +104,8 @@ class WallServiceTest {
     @Test
     fun update_noExistingIdTest() {
         //arrange
-
-        WallService.add(Post(
+        val service = WallService()
+        service.add(Post(
             id = 1234,
             date = 4321,
             text = "text to be updated"
@@ -83,12 +113,12 @@ class WallServiceTest {
         val testPost = Post(
             id = 1233,
             date = 444,
-            text = "testPost"
+            text = "updated text"
         )
 
         //act
 
-        val actualResult = !WallService.update(testPost)
+        val actualResult = service.update(testPost)
 
         //assert
 
@@ -98,23 +128,30 @@ class WallServiceTest {
     @Test
     fun update_noExistingId_FailCheck() {
         //arrange
-        WallService.add(Post(
+        val service = WallService()
+        service.add(Post(
+            id = 15,
+            date = 4321,
+            text = "text to be updated"
+        ))
+
+        service.add(Post(
             id = 17,
             date = 4321,
             text = "text to be updated"
         ))
         val testPost = Post(
-            id = 17,
+            id = 14,
             date = 444,
             text = "testPost"
         )
 
         //act
 
-        val actualResult = WallService.update(testPost)
+        val actualResult = service.update(testPost)
 
         //assert
 
-        assertFalse(actualResult)
+        assertTrue(actualResult)
     }
 }
