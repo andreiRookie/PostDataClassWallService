@@ -3,25 +3,49 @@ class WallService {
 
     private var posts = emptyArray<Post>()
 
-    private var uniqueId = 1
-        set(value) {
-            if (value > 0) {
-                for (post in posts) {
-                    if (post.id == value) {
-                        field += 1
-                        return
-                    }
-                }
-                field = value
-            }
-            return
-        }
+
+//    private var uniqueId = 1
+//        set(value) {
+//            if (value > 0) {
+//                for (post in posts) {
+//                    if (post.id == value) {
+//                        field += 1
+//                        return
+//                    }
+//                }
+//                field = value
+//            }
+//            return
+//        }
+
+    /*TODO set of unique IDs
+
+
+
+     */
+
+
 
 
     fun add(newPost: Post): Post {
 
-        uniqueId = newPost.id
+        var uniqueIdSet = buildSet<Int> {
+            for (post in posts) {
+                add(post.id)
+            }
+        }
 
+        var uniqueId = if (newPost.id == 0) 1 else newPost.id
+
+        for (id in uniqueIdSet) {
+            if (id == uniqueId) {
+                uniqueId += 1
+                uniqueIdSet += uniqueId
+                add(newPost.copy(id = uniqueId))
+                return posts.last()
+            }
+
+        }
         posts += newPost.copy(id = uniqueId)
         return posts.last()
     }
@@ -58,6 +82,20 @@ class WallService {
             }
         }
         return null
+    }
+
+
+
+    fun getPosts(): Array<Post> {
+        return posts
+    }
+
+    fun postsToString(): String {
+        var result  = ""
+        for (post in posts) {
+            result += "$post\n"
+        }
+        return result
     }
 
 

@@ -12,26 +12,15 @@ class WallServiceTest {
 
         //arrange
         val service = WallService()
+
         val testPost = Post(
             id = 0,
             date = 1000,
             text = "testPost"
         )
 
-        val testPost2 = Post(
-            id = 1,
-            date = 1000,
-            text = "testPost"
-        )
-
-        val testPost3 = Post(
-            id = 0,
-            date = 1000,
-            text = "testPost"
-        )
-
         //act
-        val actualResult = service.add(testPost3).id != 0
+        val actualResult = service.add(testPost).id != 0
 
         //assert
         assertTrue(actualResult)

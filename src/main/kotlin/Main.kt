@@ -1,34 +1,44 @@
 fun main() {
 
-//    val firstPost = Post(
-//        id = 1,
-//        date = 111,
-//        text = "firstPost"
-//    )
-//
-//    val secondPost = Post(
-//        id = 5,
-//        date = 222,
-//        text = "secondPost"
-//    )
-//
-//    val thirdPost = Post(
-//        id = 7,
-//        date = 333,
-//        text = "thirdPost"
-//    )
-//
-//    val fourthPost = Post(
-//        id = 1,
-//        date = 444,
-//        text = "fourthPost"
-//    )
-//
-//    val fifthPost = Post(
-//        id = 5,
-//        date = 555,
-//        text = "fifthPost"
-//    )
+    val firstPost = Post(
+        id = 0,
+        date = 111,
+        text = "firstPost"
+    )
+
+    val secondPost = Post(
+        id = 2,
+        date = 222,
+        text = "secondPost"
+    )
+
+    val thirdPost = Post(
+        id = 0,
+        date = 333,
+        text = "thirdPost"
+    )
+
+    val fourthPost = Post(
+        id = 2,
+        date = 444,
+        text = "fourthPost"
+    )
+
+    val fifthPost = Post(
+        id = 5,
+        date = 555,
+        text = "fifthPost"
+    )
+
+    var wall = WallService()
+
+    println(wall.add(firstPost))
+    println(wall.add(secondPost))
+    println(wall.add(thirdPost))
+    println(wall.add(fourthPost))
+
+    println(wall.postsToString())
+
 //
 //    println(WallService.add(firstPost))
 //    println(WallService.add(secondPost))
