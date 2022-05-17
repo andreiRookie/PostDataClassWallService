@@ -3,31 +3,46 @@ fun main() {
     val firstPost = Post(
         id = 1,
         date = 111,
-        text = "firstPost"
+        text = "firstPost",
+        reposts = null,
+        postponedId = null,
+        postType = null
     )
 
     val secondPost = Post(
         id = 5,
         date = 222,
-        text = "secondPost"
+        text = "secondPost",
+        reposts = null,
+        postponedId = null,
+        postType = null
     )
 
     val thirdPost = Post(
         id = 7,
         date = 333,
-        text = "thirdPost"
+        text = "thirdPost",
+        reposts = null,
+        postponedId = null,
+        postType = null
     )
 
     val fourthPost = Post(
         id = 1,
         date = 444,
-        text = "fourthPost"
+        text = "fourthPost",
+        reposts = null,
+        postponedId = null,
+        postType = null
     )
 
     val fifthPost = Post(
         id = 5,
         date = 555,
-        text = "fifthPost"
+        text = "fifthPost",
+        reposts = null,
+        postponedId = null,
+        postType = null
     )
 
     println(WallService.add(firstPost))
@@ -37,8 +52,11 @@ fun main() {
 
     println(WallService.update(Post(
             id = 2,
-    date = 444,
-    text = "fourthPost"
+            date = 444,
+            text = "fourthPost",
+            reposts = null,
+            postponedId = null,
+            postType = null
     )))
 
     println(WallService.update(fifthPost))
@@ -48,16 +66,24 @@ fun main() {
     WallService.add(Post(
         id = 1234,
         date = 4321,
-        text = "text to be changed"
+        text = "text to be changed",
+        reposts = null,
+        postponedId = null,
+        postType = null
     ))
     val testPost = Post(
         id = 1234,
         date = 1234,
-        text = "updated text"
+        text = "updated text",
+        reposts = null,
+        postponedId = null,
+        postType = null
     )
     println(WallService.toString())
 
-    WallService.update(testPost)
+    println(WallService.getPost(5).toString())
+
+    println(WallService.update(testPost))
 
     println(WallService.toString())
 

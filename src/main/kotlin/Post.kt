@@ -2,6 +2,9 @@ data class Post(
     val id: Int,
     val date: Int,
     val text: String,
+    val reposts: Object?,
+    val postponedId: Int?,
+    val postType: String?
 
 //    val ownerId: Int,
 //    val fromId: Int,
@@ -12,9 +15,7 @@ data class Post(
 //    val comment: Object,
 //    val copyright: Object,
 //    val likes: Likes
-//    val reposts: Object,
 //    val views: Object,
-//    val postType: String,
 //    val signerId: Int,
 //    val canPin: Boolean,
 //    val canDelete: Boolean,
@@ -23,7 +24,6 @@ data class Post(
 //    val markedAsAds: Boolean,
 //    val isFavorite: Boolean,
 //    val donut: Object,
-//    val postponedId: Int,
 
 //    val postSource: PostSource,
 //    var attachments: Array<Attachment>,

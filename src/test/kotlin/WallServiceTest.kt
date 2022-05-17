@@ -15,14 +15,17 @@ class WallServiceTest {
         val testPost = Post(
             id = 0,
             date = 1000,
-            text = "testPost"
+            text = "testPost",
+            reposts = null,
+            postponedId = null,
+            postType = null
         )
 
         //act
         val actualResult = WallService.add(testPost).id != 0
 
         //assert
-        assertTrue(false)
+        assertTrue(actualResult)
 
     }
 
@@ -32,20 +35,26 @@ class WallServiceTest {
         WallService.add(Post(
             id = 1,
             date = 121212,
-            text = "post"
+            text = "post",
+            reposts = null,
+            postponedId = null,
+            postType = null
         ))
 
         val testPost = Post(
             id = 1,
             date = 12,
-            text = "testPost"
+            text = "testPost",
+            reposts = null,
+            postponedId = null,
+            postType = null
         )
 
         //act
         val actualResult = WallService.update(testPost)
 
         //assert
-        assertTrue(false)
+        assertTrue(actualResult)
     }
 
     @Test
@@ -53,19 +62,25 @@ class WallServiceTest {
         WallService.add(Post(
             id = 1234,
             date = 4321,
-            text = "text to be updated"
+            text = "text to be updated",
+            reposts = null,
+            postponedId = null,
+            postType = null
         ))
         val testPost = Post(
             id = 1234,
             date = 1234,
-            text = "updated text"
+            text = "updated text",
+            reposts = null,
+            postponedId = null,
+            postType = null
         )
 
         WallService.update(testPost)
 
         val expectedResult = "updated text"
 
-        val actualResult = WallService.getPost(12344)?.text
+        val actualResult = WallService.getPost(1234)?.text
 
         assertEquals(expectedResult, actualResult)
 
@@ -78,17 +93,23 @@ class WallServiceTest {
         WallService.add(Post(
             id = 1234,
             date = 4321,
-            text = "text to be updated"
+            text = "text to be updated",
+            reposts = null,
+            postponedId = null,
+            postType = null
         ))
         val testPost = Post(
             id = 1233,
             date = 444,
-            text = "testPost"
+            text = "testPost",
+            reposts = null,
+            postponedId = null,
+            postType = null
         )
 
         //act
 
-        val actualResult = !WallService.update(testPost)
+        val actualResult = WallService.update(testPost)
 
         //assert
 
@@ -101,20 +122,26 @@ class WallServiceTest {
         WallService.add(Post(
             id = 17,
             date = 4321,
-            text = "text to be updated"
+            text = "text to be updated",
+            reposts = null,
+            postponedId = null,
+            postType = null
         ))
         val testPost = Post(
             id = 17,
             date = 444,
-            text = "testPost"
+            text = "testPost",
+            reposts = null,
+            postponedId = null,
+            postType = null
         )
 
         //act
 
-        val actualResult = WallService.update(testPost)
+        val actualResult = !WallService.update(testPost)
 
         //assert
 
-        assertFalse(actualResult)
+        assertTrue(actualResult)
     }
 }
