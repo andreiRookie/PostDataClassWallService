@@ -1,2 +1,2 @@
-class Donut(isDonut: Boolean, paidDuration: Int) {
+class Donut(val isDonut: Boolean, val paidDuration: Int) {
 }

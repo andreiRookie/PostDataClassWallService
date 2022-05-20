@@ -5,6 +5,13 @@ import attachments.VideoAttachment
 
 fun main() {
 
+//    val post = Post()
+//    val firstAttachment = post.attachments[0]
+//    if (firstAttachment is AudioAttachment) {
+//        val audioAttachment = firstAttachment
+//        println(audioAttachment)
+//    }
+
 
 
     val attachments = arrayOf(AudioAttachment(Audio()), VideoAttachment(Video()))

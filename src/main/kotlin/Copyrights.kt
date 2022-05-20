@@ -1,2 +1,2 @@
-class Copyrights(id: Int, link: String, name: String, type: String) {
+class Copyrights(val id: Int, val link: String, val name: String, val type: String) {
 }

@@ -1,2 +1,2 @@
-class Comments(count: Int, canPost: Boolean, canGroupsPost: Boolean, canClose: Boolean, canOpen: Boolean) {
+class Comments(val count: Int, val canPost: Boolean, val canGroupsPost: Boolean, val canClose: Boolean, val canOpen: Boolean) {
 }

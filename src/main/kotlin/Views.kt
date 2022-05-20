@@ -1,2 +1,2 @@
-class Views(count: Int) {
+class Views(val count: Int) {
 }

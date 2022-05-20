@@ -8,7 +8,7 @@ data class Post(
     val reposts: Reposts? =  null,
     val postponedId: Int =  1,
     val postType: String = "post_type",
-    var attachments: Array<Attachment>?,
+    var attachments: Array<Attachment> = emptyArray(),
     val ownerId: Int = 1,
     val fromId: Int = 1,
     val createdBy: Int = 1,
@@ -29,7 +29,7 @@ data class Post(
     val donut: Donut? =  null,
     val postSource: PostSource? = null,
     val geo: Place? = null,
-    val copyHistory: Array<Post>? = null
+    val copyHistory: Array<Post> = emptyArray()
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
