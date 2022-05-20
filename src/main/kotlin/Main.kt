@@ -1,16 +1,45 @@
-import attachments.Audio
-import attachments.AudioAttachment
-import attachments.Video
-import attachments.VideoAttachment
+import attachments.*
 
 fun main() {
 
 
-
     val attachments = arrayOf(AudioAttachment(Audio()), VideoAttachment(Video()))
 
-    println(attachments[1].attachmentToString())
-    println(attachments[0].attachment)
+    val testPost = Post(
+        id = 0,
+        date = 1000,
+        text = "testPost",
+        reposts = null,
+        postponedId = 1,
+        postType = "post_type",
+        attachments = attachments,
+        ownerId = 1,
+        fromId = 1,
+        createdBy = 1,
+        replyOwnerId = 1,
+        replyPostId = 1,
+        friendsOnly = false,
+        comments = null,
+        copyright = null,
+        likes = 1,
+        views = null,
+        signerId = 1,
+        canPin = false,
+        canDelete = false,
+        canEdit = false,
+        isPinned = false,
+        markedAsAds = false,
+        isFavorite = false,
+        donut = null,
+        postSource = null,
+        geo = null,
+        copyHistory = null
+    )
+
+    println(attachments[1].attachmentType)
+    println(attachments[0].attachmentType)
+
+    println(testPost.attachments?.get(0)?.attachmentType)
 //
 //
 //

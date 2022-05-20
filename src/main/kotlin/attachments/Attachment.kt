@@ -1,10 +1,3 @@
 package attachments
 
-interface Attachment {
-    val attachmentType: String
-    val attachment: Any
-
-    fun attachmentToString(): String {
-        return "$attachmentType: $attachment"
-    }
-}
+sealed class Attachment(val attachmentType: String)

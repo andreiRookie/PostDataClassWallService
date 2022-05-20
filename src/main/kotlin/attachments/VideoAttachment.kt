@@ -1,5 +1,5 @@
 package attachments
 
-class VideoAttachment(override val attachment: Video) : Attachment {
-    override val attachmentType: String = "video"
+data class VideoAttachment(val attachment: Video) : Attachment("video") {
+
 }
