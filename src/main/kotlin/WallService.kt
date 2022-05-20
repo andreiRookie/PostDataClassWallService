@@ -1,3 +1,4 @@
+import attachments.*
 
 object WallService {
 
