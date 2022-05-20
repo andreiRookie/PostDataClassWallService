@@ -1,2 +1,2 @@
-class Place(id: Int, title: String, latitude: Int, longitude: Int) {
+class Place(val id: Int, val title: String, val latitude: Int, val longitude: Int) {
 }

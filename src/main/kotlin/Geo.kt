@@ -1,2 +1,2 @@
-class Geo(type: String, coordinates: String, place: Place) {
+class Geo(val type: String, val coordinates: String, val place: Place) {
 }

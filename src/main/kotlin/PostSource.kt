@@ -1,2 +1,2 @@
-class PostSource(type: String, platform: String, data: String, url: String) {
+class PostSource(val type: String, val platform: String, val data: String, val url: String) {
 }
