@@ -32,8 +32,7 @@ fun main() {
         isFavorite = false,
         donut = null,
         postSource = null,
-        geo = null,
-        copyHistory = null
+        geo = null
     )
 
     println(attachments[1].attachmentType)

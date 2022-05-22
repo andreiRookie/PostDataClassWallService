@@ -29,7 +29,7 @@ data class Post(
     val donut: Donut? =  null,
     val postSource: PostSource? = null,
     val geo: Place? = null,
-    val copyHistory: Array<Post>? = emptyArray()
+    val copyHistory: Array<Post> = emptyArray()
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

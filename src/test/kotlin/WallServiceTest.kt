@@ -20,7 +20,6 @@ class WallServiceTest {
             reposts =  null,
             postponedId =  1,
             postType = "post_type",
-            attachments = null,
             ownerId = 1,
             fromId = 1,
             createdBy = 1,
@@ -40,8 +39,7 @@ class WallServiceTest {
             isFavorite = false,
             donut =  null,
             postSource = null,
-            geo = null,
-            copyHistory = null
+            geo = null
         )
 
         //act
@@ -62,7 +60,6 @@ class WallServiceTest {
             reposts =  null,
             postponedId =  1,
             postType = "post_type",
-            attachments = null,
             ownerId = 1,
             fromId = 1,
             createdBy = 1,
@@ -82,8 +79,7 @@ class WallServiceTest {
             isFavorite = false,
             donut =  null,
             postSource = null,
-            geo = null,
-            copyHistory = null
+            geo = null
         ))
 
         val testPost = Post(
@@ -93,7 +89,6 @@ class WallServiceTest {
             reposts =  null,
             postponedId =  1,
             postType = "post_type",
-            attachments = null,
             ownerId = 1,
             fromId = 1,
             createdBy = 1,
@@ -113,8 +108,7 @@ class WallServiceTest {
             isFavorite = false,
             donut =  null,
             postSource = null,
-            geo = null,
-            copyHistory = null
+            geo = null
         )
 
         //act
@@ -133,7 +127,6 @@ class WallServiceTest {
             reposts =  null,
             postponedId =  1,
             postType = "post_type",
-            attachments = null,
             ownerId = 1,
             fromId = 1,
             createdBy = 1,
@@ -153,8 +146,7 @@ class WallServiceTest {
             isFavorite = false,
             donut =  null,
             postSource = null,
-            geo = null,
-            copyHistory = null
+            geo = null
         ))
         val testPost = Post(
             id = 1234,
@@ -163,7 +155,6 @@ class WallServiceTest {
             reposts =  null,
             postponedId =  1,
             postType = "post_type",
-            attachments = null,
             ownerId = 1,
             fromId = 1,
             createdBy = 1,
@@ -183,8 +174,7 @@ class WallServiceTest {
             isFavorite = false,
             donut =  null,
             postSource = null,
-            geo = null,
-            copyHistory = null
+            geo = null
         )
 
         WallService.update(testPost)
@@ -208,7 +198,6 @@ class WallServiceTest {
             reposts =  null,
             postponedId =  1,
             postType = "post_type",
-            attachments = null,
             ownerId = 1,
             fromId = 1,
             createdBy = 1,
@@ -228,8 +217,7 @@ class WallServiceTest {
             isFavorite = false,
             donut =  null,
             postSource = null,
-            geo = null,
-            copyHistory = null
+            geo = null
         ))
         val testPost = Post(
             id = 1233,
@@ -238,7 +226,6 @@ class WallServiceTest {
             reposts =  null,
             postponedId =  1,
             postType = "post_type",
-            attachments = null,
             ownerId = 1,
             fromId = 1,
             createdBy = 1,
@@ -258,8 +245,7 @@ class WallServiceTest {
             isFavorite = false,
             donut =  null,
             postSource = null,
-            geo = null,
-            copyHistory = null
+            geo = null
         )
 
         //act
@@ -281,7 +267,6 @@ class WallServiceTest {
             reposts =  null,
             postponedId =  1,
             postType = "post_type",
-            attachments = null,
             ownerId = 1,
             fromId = 1,
             createdBy = 1,
@@ -301,8 +286,7 @@ class WallServiceTest {
             isFavorite = false,
             donut =  null,
             postSource = null,
-            geo = null,
-            copyHistory = null
+            geo = null
         ))
         val testPost = Post(
             id = 17,
@@ -311,7 +295,6 @@ class WallServiceTest {
             reposts =  null,
             postponedId =  1,
             postType = "post_type",
-            attachments = null,
             ownerId = 1,
             fromId = 1,
             createdBy = 1,
@@ -331,8 +314,7 @@ class WallServiceTest {
             isFavorite = false,
             donut =  null,
             postSource = null,
-            geo = null,
-            copyHistory = null
+            geo = null
         )
 
         //act
