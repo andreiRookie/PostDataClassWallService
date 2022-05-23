@@ -8,7 +8,7 @@ data class Post(
     val reposts: Reposts? =  null,
     val postponedId: Int =  1,
     val postType: String = "post_type",
-    var attachments: Array<Attachment> = emptyArray(),
+    val attachments: Array<Attachment> = emptyArray(),
     val ownerId: Int = 1,
     val fromId: Int = 1,
     val createdBy: Int = 1,

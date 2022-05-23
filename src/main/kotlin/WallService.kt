@@ -3,6 +3,64 @@ import attachments.*
 object WallService {
 
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
+
+
+    private var reports = emptyArray<Report>()
+    private val reportReasons = arrayOf(0,1,2,3,4,5,6,7,8)
+
+
+
+    fun reportComment(commentId: Int, reason: Int) {
+        if (findCommentById(commentId) != null) {
+
+            try {
+                reports += Report(commentId = commentId, reason = reportReasons[reason])
+                println("report (commentId $commentId, reason $reason) sent")
+            } catch (e: IndexOutOfBoundsException) {
+                println("no report reason with id $reason")
+            }
+
+        } else {
+            throw CommentNotFoundException("no comment with id $commentId")
+        }
+
+    }
+
+    fun createComment(comment: Comment) {
+
+        if (findPostById(comment.postId) != null) {
+            comments += comment
+        } else {
+            throw PostNotFoundException("no post with id ${comment.postId}")
+        }
+
+    }
+
+
+//    fun addComment(comment: Comment){
+//          uniqueCommentId
+//    }
+
+    fun findCommentById(commentId: Int): Comment? {
+        for (comment in comments) {
+            if (comment.commentId == commentId) {
+                return comment
+            }
+        }
+        return null
+    }
+
+
+    fun findPostById(id: Int): Post? {
+        for (post in posts) {
+            if (post.id == id) {
+                return post
+            }
+        }
+        return null
+    }
+
 
     fun add(newPost: Post): Post {
 
@@ -39,8 +97,16 @@ object WallService {
         return false
     }
 
-    fun getPostsSize(): Int {
-        return posts.size
+    fun wipePostsOut() {
+        posts = emptyArray()
+    }
+
+    fun wipeCommentsOut() {
+        comments = emptyArray()
+    }
+
+    fun getReports(): Array<Report> {
+        return reports
     }
 
     override fun toString(): String {

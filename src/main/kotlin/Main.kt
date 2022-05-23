@@ -4,6 +4,8 @@ fun main() {
 
 
     val attachments = arrayOf(AudioAttachment(Audio()), VideoAttachment(Video()))
+    println(attachments[1].attachmentType)
+    println(attachments[0].attachmentType)
 
     val testPost = Post(
         id = 0,
@@ -34,11 +36,25 @@ fun main() {
         postSource = null,
         geo = null
     )
+    WallService.add(testPost)
+    WallService.add(testPost.copy(id = 3))
+    WallService.add(testPost.copy(id = 4))
+    WallService.add(testPost.copy(id = 4))
+    WallService.add(testPost.copy(id = 4))
+    WallService.add(testPost.copy(id = 4))
 
-    println(attachments[1].attachmentType)
-    println(attachments[0].attachmentType)
+    println(WallService.toString())
 
-    println(testPost.attachments?.get(0)?.attachmentType)
+    val testComment = Comment(postId = 3)
+
+    WallService.createComment(testComment)
+
+    println(WallService.findCommentById(100)?.postId)
+
+    WallService.reportComment(100, 8)
+
+
+
 //
 //
 //
