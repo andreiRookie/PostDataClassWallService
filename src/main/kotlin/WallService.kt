@@ -18,7 +18,7 @@ object WallService {
                 reports += Report(commentId = commentId, reason = reportReasons[reason])
                 println("report (commentId $commentId, reason $reason) sent")
             } catch (e: IndexOutOfBoundsException) {
-                println("no report reason with id $reason")
+                throw ReasonNotFoundException("no report reason with id $reason")
             }
 
         } else {

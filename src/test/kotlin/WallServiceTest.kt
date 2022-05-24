@@ -37,6 +37,18 @@ class WallServiceTest {
 
         WallService.reportComment(332, 3)
     }
+    @Test(expected = ReasonNotFoundException::class)
+    fun reportComment_shouldThrowReasonNotFound() {
+        WallService.wipeCommentsOut()
+
+        val testPost = Post(id = 5)
+        WallService.add(testPost)
+
+        val testComment = Comment(commentId = 333, postId = 5)
+        WallService.createComment(testComment)
+
+        WallService.reportComment(333, 9)
+    }
 
     @Test
     fun createComment_test() {
